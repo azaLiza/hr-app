@@ -100,8 +100,6 @@ Spring Boot la mappe automatiquement à la propriété com.openclassrooms.webapp
 
 ### 📤 Pour arrêter les services
 ```bash
-Copier
-Modifier
 docker-compose down
 ```
 
@@ -113,7 +111,7 @@ L’API est accessible en direct via http://localhost:9000/api/employees (ou aut
 Ce projet a été réalisé dans un but d’apprentissage. Les contributions sont les bienvenues via issues ou pull requests.
 
 ### 📄 Licence
-Ce projet est sous licence MIT (ou spécifie la licence que tu préfères).
+Ce projet est sous licence MIT.
 ----
 
 
