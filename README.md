@@ -64,8 +64,6 @@ cd app-hr
 2. Lancez les services avec Docker Compose :
 
 ```bash
-Copier
-Modifier
 docker-compose up --build
 ```
 Cela va :
