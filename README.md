@@ -74,7 +74,7 @@ Cela va :
           la WebApp sur http://localhost:9001
 
 ### 📦 Structure du projet
-
+```graphql
 app-hr/
 ├── api/           # API Spring Boot (back-end)
 │   ├── Dockerfile
@@ -84,6 +84,7 @@ app-hr/
 │   └── ...
 ├── docker-compose.yml
 └── README.md
+```
 
 
 ### 🔧 Variables d’environnement
