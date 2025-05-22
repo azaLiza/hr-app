@@ -10,11 +10,12 @@ import org.springframework.web.client.RestTemplate;
 
 import com.openclassrooms.webapp.model.Employee;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
 @Component
 public class EmployeeProxy {
+	private static final Logger log = LoggerFactory.getLogger(EmployeeProxy.class);
 
     @Autowired
     private CustomProperties props;
@@ -29,16 +30,21 @@ public class EmployeeProxy {
         String getEmployeesUrl = baseApiUrl + "/employees";
 
         RestTemplate restTemplate = new RestTemplate();
+       try {
         ResponseEntity<Iterable<Employee>> response = restTemplate.exchange(
-                getEmployeesUrl,
-                HttpMethod.GET,
-                null,
-                new ParameterizedTypeReference<Iterable<Employee>>() {}
-                );
+            getEmployeesUrl,
+            HttpMethod.GET,
+            null,
+            new ParameterizedTypeReference<Iterable<Employee>>() {}
+        );
 
         log.debug("Get Employees call " + response.getStatusCode().toString());
-        
         return response.getBody();
+
+    } catch (Exception e) {
+        log.error("Erreur lors de l'appel à l'API GET /employees", e);
+        throw e; // pour que l’erreur continue à remonter
+    }
     }
     
     /**

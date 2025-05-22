@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  api:
+    build: 
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    networks:
+      - hr-network
+    container_name: api-hr
+
+  webapp:
+    build: 
+      context: ./webapp
+      dockerfile: Dockerfile
+    ports:
+      - "9001:9001"
+    networks:
+      - hr-network
+    container_name: webapp-hr
+    depends_on:
+      - api
+    environment:
+     - COM_OPENCLASSROOMS_WEBAPP_APIURL=http://api:9000 # webapp appelle api via nom du service docker
+    
+
+networks:
+  hr-network:
+    

@@ -24,7 +24,7 @@ public class EmployeeService {
     }
 
     public void deleteEmployee(final int id) {
-        employeeProxy.deleteEmployee(id);;
+        employeeProxy.deleteEmployee(id);
     }
 
      public Employee saveEmployee(Employee employee) {

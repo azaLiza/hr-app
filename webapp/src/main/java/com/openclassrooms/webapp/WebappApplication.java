@@ -13,16 +13,16 @@ import lombok.Data;
 
 @Data
 @SpringBootApplication
-@RestController
+//@RestController
 public class WebappApplication /*implements CommandLineRunner */ {
 
     @Autowired
     private CustomProperties properties;
     
-    @RequestMapping("/")
+  /*   @RequestMapping("/")
 	public String home() {
 		return "Hello Docker !";
-	}
+	} */
 
     public static void main(String[] args) {
         SpringApplication.run(WebappApplication.class, args);

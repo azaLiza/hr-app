@@ -10,6 +10,8 @@ COPY . .
 
 RUN mvn clean package
 
+RUN mvn clean install
+
 
 #Creation of the docker image
 FROM openjdk:24-ea-1-jdk-slim-bullseye
